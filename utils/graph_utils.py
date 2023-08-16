@@ -34,6 +34,9 @@ def get_edge_list_with_adj_map(adj_map):
     for i, adj_list in enumerate(adj_map):
         for j in np.where(adj_list == 1)[0]:
             edge = [i, j]
-            edge_list.append(edge)
 
+            if [j, i] not in edge_list:
+                edge_list.append(edge)
+
+    edge_list = np.array(edge_list)
     return edge_list

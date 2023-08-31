@@ -40,18 +40,13 @@ def visualize(graph):
 
     idx = 0
     while True:
-        # for primitive_graph in graph.primitive_graph_list:
-        #     visualize_graph(graph=primitive_graph, center_pos=[3, 3, 3])
+        for primitive_graph in graph.primitive_graph_list:
+            visualize_graph(graph=primitive_graph, center_pos=[0, 3, 0])
 
-        for hierarchy_graph in graph.hierarchy_graph_map[2]:
-            if idx > 200:
-                continue
+        for i in range(5):
+            for j in range(4):
+                hierarchy_graph = graph.hierarchy_graph_map[i][j]
+                center_pos = [(j-2) * 5, -i * 5, 0]
+                visualize_graph(graph=hierarchy_graph, center_pos=center_pos)
 
-            idx += 1
-            import random
-            center_pos = [random.randrange(-5, 5), random.randrange(-5, 5), random.randrange(-5, 5)]
-            visualize_graph(graph=hierarchy_graph, center_pos=center_pos)
-            print(len(graph.hierarchy_graph_map[0]))
-            print(len(graph.hierarchy_graph_map[1]))
-            print(len(graph.hierarchy_graph_map[2]))
         rate(1)

@@ -15,6 +15,13 @@ for i in range(0, 2):
 node_list.append(Node(pos=[0.5, 1.5, 0.5], idx=len(node_list), is_center=True))
 node_list = np.array(node_list)
 
+node_list = []
+for i in range(0, 2):
+    for j in range(0, 2):
+        node = Node(pos=[i, j, 0], idx=len(node_list), is_center=True)
+        node_list.append(node)
+node_list = np.array(node_list)
+
 # make edge list
 edge_list = [[0, 1], [0, 2], [0, 4],
              [1, 0], [1, 3], [1, 5],
@@ -25,6 +32,11 @@ edge_list = [[0, 1], [0, 2], [0, 4],
              [6, 2], [6, 4], [6, 7],
              [7, 3], [7, 5], [7, 6],
              [8, 2], [8, 3], [8, 6], [8, 7]]
+
+edge_list = [[0, 1], [0, 2],
+             [1, 0], [1, 3],
+             [2, 0], [2, 3],
+             [3, 1], [3, 2]]
 
 # make adj map
 adj_map = get_adj_map_with_edge_list(node_list=node_list, edge_list=edge_list)

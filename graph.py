@@ -8,7 +8,7 @@ class Graph():
         self.adj_map = adj_map
         if not is_primitive:
             self.primitive_graph_list = self.make_primitive_graph()
-            self.hierarchy_graph_map = self.make_hierarchy_graph(max_iter=3)
+            self.hierarchy_graph_map = self.make_hierarchy_graph(max_iter=5)
 
     def make_primitive_graph(self):
         primitive_graph_list = []
